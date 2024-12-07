@@ -6,10 +6,10 @@ function playSound(soundFile) {
 document.addEventListener("keydown", (event) => {
     switch (event.key.toLowerCase()) {
         case "d":
-            playSound("/src/drumroll.mp3");
+            playSound("drumroll.mp3");
             break;
         case "m":
-            playSound("/src/micdrop.mp3");
+            playSound("micdrop.mp3");
             break;
     }
 });
