@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="SP">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Grafos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="grafo.png">
+</head>
+<body>
+    <h1>Gestor de Grafos con Algoritmo de Kruskal</h1>
+
+    <div id="drag-drop-area">
+        <p>Arrastra un archivo aquí o <span id="file-input-trigger">haz clic para seleccionarlo</span>.</p>
+        <input type="file" id="file-input" accept=".csv, .xlsx" hidden>
+    </div>
+
+    <form id="upload-form">
+        <button type="button" id="upload-button">Subir Archivo</button>
+    </form>
+
+    <div id="results" style="display: none;">
+        <h2>Resultados</h2>
+        <p id="peso_total"></p>
+        <div class="graficos-container">
+            <div class="grafico-box">
+                <h3>Grafo Completo</h3>
+                <div class="image-container">
+                    <img id="grafo_completo" src="#" alt="Grafo Completo">
+                    <button class="zoom-button" data-zoom="in">Zoom +</button>
+                    <button class="zoom-button" data-zoom="out">Zoom -</button>
+                </div>
+            </div>
+            <div class="grafico-box">
+                <h3>Árbol MST</h3>
+                <div class="image-container">
+                    <img id="mst" src="#" alt="Árbol MST">
+                    <button class="zoom-button" data-zoom="in">Zoom +</button>
+                    <button class="zoom-button" data-zoom="out">Zoom -</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="error-message" style="display:none; color: red;">
+        Por favor selecciona un archivo válido antes de subirlo.
+    </div>
+
+    <script>
+        document.querySelectorAll('.zoom-button').forEach(button => {
+            button.addEventListener('click', event => {
+                const img = button.parentElement.querySelector('img');
+                const zoom = button.getAttribute('data-zoom');
+                const currentScale = parseFloat(img.style.transform.replace('scale(', '').replace(')', '') || 1);
+                img.style.transform = `scale(${zoom === 'in' ? currentScale + 0.1 : currentScale - 0.1})`;
+            });
+        });
+    </script>
+</body>
+</html>
