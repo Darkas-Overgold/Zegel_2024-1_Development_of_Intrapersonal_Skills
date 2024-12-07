@@ -1,5 +1,0 @@
-Flask
-pandas
-networkx
-matplotlib
-gunicorn
