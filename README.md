@@ -19,14 +19,14 @@ Holds audio files and other multimedia assets:
 drumroll.mp3: Sound effect for drumrolls.
 micdrop.mp3: Sound effect for mic drops.
 ## 🖥️ Functionality
-# 🌈 Keypress Events
+### 🌈 Keypress Events
 Interact with the project using the following keyboard keys:
 Key	Effect
 D	Play a drumroll sound.
 M	Play a mic drop sound.
-## 🎨 Fullscreen Presentation
+### 🎨 Fullscreen Presentation
 The embedded Canva presentation scales to fullscreen and is centered for maximum impact.
-## 🔊 Sound Effects
+### 🔊 Sound Effects
 Sound feedback adds an extra layer of interactivity to user actions, enhancing engagement.
 ## 📦 Installation
 Clone the Repository
